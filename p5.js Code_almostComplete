@@ -1,11 +1,9 @@
-let pX;
-let pY;
-let i = 0;
-
 let xInput;
 let yInput;
 let x;
 let y;
+let iX;
+let iY;
 
 function setup() {
   createCanvas(400, 400);
@@ -17,7 +15,6 @@ function setup() {
   yInput = createInput();
   yInput.size(50);
   yInput.position(60, 380);
-
 }
 
 function draw() {
@@ -33,37 +30,39 @@ function draw() {
     text("x = 0", width / 2, height / 2 - 50);
     text("y = -1", width / 2, height / 2 + 50);
 
+    iX = 0;
+    iY = -1;
   }
 
   //If (-x,-y); (pX,pY) = (0,1)
   if (x < 0 && y < 0) {
     text("x = 0", width / 2, height / 2 - 50);
-
     text("y = +1", width / 2, height / 2 + 50);
+
+    iX = 0;
+    iY = 1;
   }
 
   //If (x,-y); (pX,pY) = (-1,0)
   if (x > 0 && y < 0) {
     text("x = -1", width / 2, height / 2 - 50);
-
     text("y = 0", width / 2, height / 2 + 50);
+
+    iX = -1;
+    iY = 0;
   }
 
   //If (-x,y); (pX,pY) = (1,0)
   if (x < 0 && y > 0) {
     text("x = +1", width / 2, height / 2 - 50);
-
     text("y = 0", width / 2, height / 2 + 50);
+
+    iX = 1;
+    iY = 0;
   }
 
-  //   text("x = +1", width / 2, height / 2 - 50);
-  //   text("x = -1", width / 2, height / 2 - 50);
-  //   text("y = 0", width / 2, height / 2 + 50);
-  //   text("y = +1", width / 2, height / 2 + 50);
-  //   text("y = -1", width / 2, height / 2 + 50);
+  x = 2.5 * iX;
+  y = 2.5 * iY;
 
-  pX = 5 * x * i;
-  pY = 5 * y * i;
-
-  print(pX, pY);
+  print(x, y);
 }
